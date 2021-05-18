@@ -1,3 +1,8 @@
+"""
+반복문 while을 True로 했기 때문에 q가 비어있을때도 실행이 되서 런타임에러(IndexError)가 떳다
+while q: 로 바꿔 제출하여 해결했다.
+"""
+
 from collections import deque
 
 m, n = map(int, input().split(' '))
@@ -14,7 +19,7 @@ for i in range(n):
   for j in range(m):
     if table[i][j] == 1:
       ripe_tomatoes += 1
-      q.append((i, j, 0)) # TIL: bfs에서 두 지점에 시작하면 두 지점 모두 먼저 큐에 넣어준다.
+      q.append((i, j, 0))
     elif table[i][j] == -1:
       ripe_tomatoes += 1
 
@@ -24,14 +29,14 @@ if ripe_tomatoes == n * m:
 
 day = 0
 
-while True:
+while q:
   e = q.popleft()
 
   for i in range(4):
     y = e[0] + dy[i]
     x = e[1] + dx[i]
 
-    if y <= n -1 and y >= 0 and x <= m - 1 and x >= 0 and table[y][x] == 0:
+    if 0 <= y <= n - 1 and 0 <= x <= m - 1 and table[y][x] == 0:
       table[y][x] = 1
       q.append((y, x, e[2] + 1))
 
