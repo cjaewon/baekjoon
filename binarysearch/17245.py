@@ -17,7 +17,7 @@ for i in range(n):
 computures = sorted(computures)
 
 start = 0
-end = sum(computures)
+end = computures[-1]
 half = sum(computures) / 2
 near = []
 
