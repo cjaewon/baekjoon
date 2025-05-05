@@ -45,7 +45,7 @@ def union(x, y):
     parent[rx] = ry
 
     if rank[rx] == rank[ry]:
-      rank[rx] += 1
+      rank[ry] += 1
 
 curr_v = 0
 edge_w_sum = 0
