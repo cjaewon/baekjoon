@@ -1,7 +1,7 @@
 import sys
 from collections import defaultdict
 
-sys.setrecursionlimit(10000)  
+sys.setrecursionlimit(10000000)  
 
 N, M = map(int, input().split())
 
