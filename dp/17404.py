@@ -9,7 +9,7 @@ cost: list[list[int, int, int]] = [[0, 0, 0]] + [list(map(int, input().split()))
 
 min_val = float("inf")
 
-# === calc first house painted by red ===
+# === calc last house painted by red ===
 dp = [[0, 0, 0] for i in range(N + 1)]
 
 dp[1] = cost[1]
@@ -24,7 +24,7 @@ for i in range(3, N + 1):
 
 min_val = min(min_val, dp[N][0])
 
-# === calc first house painted by green ===
+# === calc last house painted by green ===
 dp = [[0, 0, 0] for i in range(N + 1)]
 
 dp[1] = cost[1]
@@ -39,7 +39,7 @@ for i in range(3, N + 1):
 
 min_val = min(min_val, dp[N][1])
 
-# === calc first house painted by blue ===
+# === calc last house painted by blue ===
 dp = [[0, 0, 0] for i in range(N + 1)]
 
 dp[1] = cost[1]
